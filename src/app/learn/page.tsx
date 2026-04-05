@@ -45,6 +45,7 @@ const articles: Article[] = [
       "From Horvath to DunedinPACE — how DNA methylation clocks work, what they measure, their limitations, and how to interpret your results.",
     category: "Fundamentals",
     readTime: "10 min",
+    slug: "epigenetic-clocks",
   },
   {
     title: "Bioelectric Medicine: Levin, Voltage, and Regeneration",
@@ -52,6 +53,7 @@ const articles: Article[] = [
       "Michael Levin's groundbreaking research on bioelectric signaling, what it means for aging, and why consumer 'cell voltage' products aren't the same thing.",
     category: "Frontier Science",
     readTime: "16 min",
+    slug: "bioelectric-medicine",
   },
   {
     title: "Senolytics: Clearing Zombie Cells",
@@ -59,6 +61,7 @@ const articles: Article[] = [
       "Senescent cells accumulate with age and poison their neighbors. Senolytic drugs like dasatinib+quercetin and fisetin aim to clear them. Where does the evidence stand?",
     category: "Deep Dive",
     readTime: "13 min",
+    slug: "senolytics",
   },
   {
     title: "Photobiomodulation: How Red Light Affects Mitochondria",
@@ -66,6 +69,7 @@ const articles: Article[] = [
       "The mechanism behind red/near-infrared light therapy — cytochrome c oxidase, nitric oxide dissociation, and downstream ATP effects. Plus: how to evaluate devices.",
     category: "Deep Dive",
     readTime: "11 min",
+    slug: "photobiomodulation",
   },
   {
     title: "The Supplement Industry: Reading Labels and Spotting Hype",
@@ -73,6 +77,7 @@ const articles: Article[] = [
       "Third-party testing, bioavailability, proprietary blends, and the difference between 'clinically studied ingredients' and actual clinical evidence for a product.",
     category: "Practical Guide",
     readTime: "8 min",
+    slug: "supplement-industry",
   },
 ];
 
