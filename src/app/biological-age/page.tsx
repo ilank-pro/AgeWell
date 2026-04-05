@@ -6,25 +6,12 @@ export const metadata: Metadata = {
   description: "Measure your biological age with epigenetic clocks, glycan analysis, and blood biomarker panels. The first step to science-based anti-aging.",
 };
 
+import BiologicalClockDashboard from "@/components/BiologicalClockDashboard";
+
 export default function BiologicalAgePage() {
   return (
     <div>
-      {/* Hero */}
-      <section className="bg-zinc-950 text-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-wider text-emerald-400">Step 1</p>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
-              Know Your <span className="text-emerald-400">Biological Age</span>
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-zinc-300">
-              Your chronological age is just a number. Your biological age — measured by epigenetic clocks,
-              glycan patterns, or blood biomarkers — tells you how fast your body is actually aging.
-              You can&apos;t optimize what you don&apos;t measure.
-            </p>
-          </div>
-        </div>
-      </section>
+      <BiologicalClockDashboard />
 
       {/* What is biological age */}
       <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6">

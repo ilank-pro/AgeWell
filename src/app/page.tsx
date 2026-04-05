@@ -2,6 +2,8 @@ import Link from "next/link";
 import { essentialsProducts, advancedProducts, deviceProducts } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 
+import VitalityFlowHero from "@/components/VitalityFlowHero";
+
 export default function Home() {
   const featured = [
     essentialsProducts[0], // NMN
@@ -12,41 +14,7 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-zinc-950 text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-950/50 via-zinc-950 to-zinc-950" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-wider text-emerald-400">
-              Science-First Anti-Aging
-            </p>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">
-              Measure your age.
-              <br />
-              <span className="text-emerald-400">Then optimize it.</span>
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-zinc-300">
-              Every product we recommend is backed by peer-reviewed human research.
-              No hype. No miracle claims. Just science you can trust — and a healthy
-              dose of skepticism where it&apos;s warranted.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/biological-age"
-                className="rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-emerald-400"
-              >
-                Test Your Biological Age
-              </Link>
-              <Link
-                href="/essentials"
-                className="rounded-full border border-zinc-700 px-6 py-3 text-sm font-semibold text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
-              >
-                Browse Essentials
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VitalityFlowHero />
 
       {/* How it works */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
