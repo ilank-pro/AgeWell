@@ -6,13 +6,22 @@ export const metadata: Metadata = {
   description: "Educational articles on the science of aging: NAD+ pathways, mitochondrial function, epigenetic clocks, and bioelectric signaling.",
 };
 
-const articles = [
+interface Article {
+  title: string;
+  description: string;
+  category: string;
+  readTime: string;
+  slug?: string;
+}
+
+const articles: Article[] = [
   {
     title: "Why We Age: The Hallmarks of Aging",
     description:
       "An overview of the 12 hallmarks of aging — from genomic instability to stem cell exhaustion — and which ones are targetable with current interventions.",
     category: "Fundamentals",
     readTime: "12 min",
+    slug: "hallmarks-of-aging",
   },
   {
     title: "NAD+ and Sirtuins: The Sinclair Thesis",
@@ -20,6 +29,7 @@ const articles = [
       "David Sinclair's information theory of aging posits that aging is caused by loss of epigenetic information, and NAD+-dependent sirtuins are the repair mechanism. What does the evidence actually support?",
     category: "Deep Dive",
     readTime: "15 min",
+    slug: "nad-sirtuins",
   },
   {
     title: "Mitochondria, ATP, and the Energy Theory of Aging",
@@ -27,6 +37,7 @@ const articles = [
       "How mitochondrial dysfunction drives aging, the role of membrane potential in ATP production, and what you can actually do about it (spoiler: exercise is #1).",
     category: "Deep Dive",
     readTime: "14 min",
+    slug: "mitochondria-atp-aging",
   },
   {
     title: "Epigenetic Clocks: Measuring Biological Age",
@@ -83,26 +94,52 @@ export default function LearnPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <div
-              key={article.title}
-              className="flex flex-col rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900"
-            >
-              <div className="flex items-center gap-2">
-                <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-                  {article.category}
-                </span>
-                <span className="text-xs text-zinc-400">{article.readTime}</span>
+          {articles.map((article) => {
+            const content = (
+              <>
+                <div className="flex items-center gap-2">
+                  <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                    {article.category}
+                  </span>
+                  <span className="text-xs text-zinc-400">{article.readTime}</span>
+                </div>
+                <h3 className={`mt-3 text-lg font-semibold text-zinc-900 dark:text-zinc-100 ${article.slug ? "group-hover:text-emerald-600 dark:group-hover:text-emerald-400" : ""}`}>
+                  {article.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+                  {article.description}
+                </p>
+                {article.slug ? (
+                  <p className="mt-4 text-sm font-medium text-emerald-600 group-hover:text-emerald-500 dark:text-emerald-400">
+                    Read article →
+                  </p>
+                ) : (
+                  <p className="mt-4 text-sm text-zinc-400">Coming soon</p>
+                )}
+              </>
+            );
+
+            if (article.slug) {
+              return (
+                <Link
+                  key={article.title}
+                  href={`/learn/${article.slug}`}
+                  className="group flex flex-col rounded-xl border border-zinc-200 bg-white p-6 transition-all hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700"
+                >
+                  {content}
+                </Link>
+              );
+            }
+
+            return (
+              <div
+                key={article.title}
+                className="flex flex-col rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                {content}
               </div>
-              <h3 className="mt-3 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                {article.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
-                {article.description}
-              </p>
-              <p className="mt-4 text-sm text-zinc-400">Coming soon</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

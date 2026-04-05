@@ -1,9 +1,39 @@
 import type { Product } from "@/data/products";
 import EvidenceBadge from "./EvidenceBadge";
 
+function ProductJsonLd({ product }: { product: Product }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: product.name,
+    description: product.tagline,
+    articleSection: product.category,
+    about: {
+      "@type": "MedicalEntity",
+      name: product.name,
+      description: product.description,
+    },
+    citation: product.studies.map((s) => ({
+      "@type": "ScholarlyArticle",
+      headline: s.title,
+      isPartOf: { "@type": "Periodical", name: s.journal },
+      datePublished: String(s.year),
+      ...(s.pubmedId ? { url: `https://pubmed.ncbi.nlm.nih.gov/${s.pubmedId}/` } : {}),
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default function ProductPage({ product }: { product: Product }) {
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+      <ProductJsonLd product={product} />
       {/* Header */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-2 mb-3">

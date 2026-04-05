@@ -14,10 +14,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.SITE_URL || "https://agewell.com";
+
 export const metadata: Metadata = {
-  title: "AgeWell — Science-First Anti-Aging Products",
+  title: {
+    default: "AgeWell — Science-First Anti-Aging Products",
+    template: "%s | AgeWell",
+  },
   description:
     "Curated anti-aging supplements, devices, and biological age testing — every recommendation backed by peer-reviewed research. Measure your age, then optimize it.",
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "AgeWell",
+    title: "AgeWell — Science-First Anti-Aging Products",
+    description:
+      "Curated anti-aging supplements, devices, and biological age testing — every recommendation backed by peer-reviewed research.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AgeWell — Science-First Anti-Aging Products",
+    description:
+      "Curated anti-aging supplements, devices, and biological age testing — every recommendation backed by peer-reviewed research.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
