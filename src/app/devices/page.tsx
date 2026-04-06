@@ -52,11 +52,11 @@ export default function DevicesPage() {
 
         {/* Bioelectric editorial note */}
         <section className="mt-4">
-          <div className="rounded-lg border-l-4 border-amber-500 bg-amber-950/60 p-5">
-            <h3 className="text-lg font-semibold text-amber-200">
+          <div className="rounded-lg border-l-4 border-amber-400 bg-amber-50 p-5 dark:border-amber-500 dark:bg-amber-950/20">
+            <h3 className="text-lg font-semibold text-amber-800 dark:text-amber-300">
               On Bioelectric Devices & &quot;Cell Voltage&quot;
             </h3>
-            <div className="mt-3 space-y-3 text-sm leading-relaxed text-zinc-300">
+            <div className="mt-3 space-y-3 text-sm leading-relaxed text-amber-900/80 dark:text-amber-200/80">
               <p>
                 The science of bioelectricity is legitimate and fascinating. Michael Levin&apos;s lab at Tufts
                 has shown that voltage gradients guide tissue patterning and regeneration. Mitochondrial
