@@ -36,7 +36,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
             <div>
                <h3 className="text-sm font-black uppercase tracking-[0.1em] text-white group-hover:text-emerald-400 transition-colors">
-                {product.name}
+                {product.shortName || product.name}
               </h3>
               <div className="mt-1.5 flex items-center gap-2">
                  <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-tighter">Status:</span>

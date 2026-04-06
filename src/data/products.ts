@@ -13,6 +13,7 @@ export interface Study {
 export interface Product {
   id: string;
   name: string;
+  shortName?: string;
   slug: string;
   category: Category;
   tier: Tier;
@@ -34,6 +35,7 @@ export const products: Product[] = [
   {
     id: "nmn",
     name: "NMN (Nicotinamide Mononucleotide)",
+    shortName: "NMN",
     slug: "nmn",
     category: "supplements",
     tier: "Essentials",
@@ -75,6 +77,7 @@ export const products: Product[] = [
   {
     id: "omega3",
     name: "Omega-3 Fatty Acids (EPA/DHA)",
+    shortName: "Omega-3 (EPA/DHA)",
     slug: "omega-3",
     category: "supplements",
     tier: "Essentials",
@@ -304,6 +307,7 @@ export const products: Product[] = [
   {
     id: "urolithinA",
     name: "Urolithin A (Mitopure)",
+    shortName: "Urolithin A",
     slug: "urolithin-a",
     category: "supplements",
     tier: "Advanced",
@@ -406,6 +410,7 @@ export const products: Product[] = [
   {
     id: "pqq",
     name: "PQQ (Pyrroloquinoline Quinone)",
+    shortName: "PQQ",
     slug: "pqq",
     category: "supplements",
     tier: "Advanced",
@@ -438,6 +443,7 @@ export const products: Product[] = [
   {
     id: "alphalipoic",
     name: "Alpha-Lipoic Acid (ALA)",
+    shortName: "Alpha-Lipoic Acid",
     slug: "alpha-lipoic-acid",
     category: "supplements",
     tier: "Advanced",
@@ -479,6 +485,7 @@ export const products: Product[] = [
   {
     id: "evoo",
     name: "High-Polyphenol Extra Virgin Olive Oil",
+    shortName: "EVOO (Olive Oil)",
     slug: "olive-oil",
     category: "food",
     tier: "Essentials",
@@ -511,6 +518,7 @@ export const products: Product[] = [
   {
     id: "sulforaphane",
     name: "Sulforaphane (Broccoli Sprout Extract)",
+    shortName: "Sulforaphane",
     slug: "sulforaphane",
     category: "food",
     tier: "Advanced",
@@ -544,6 +552,7 @@ export const products: Product[] = [
   {
     id: "greentea",
     name: "Green Tea Extract / EGCG",
+    shortName: "Green Tea / EGCG",
     slug: "green-tea-egcg",
     category: "food",
     tier: "Essentials",
@@ -624,6 +633,7 @@ export const products: Product[] = [
   {
     id: "redlight",
     name: "Red/Near-Infrared Light Therapy (Photobiomodulation)",
+    shortName: "Red Light Therapy",
     slug: "red-light-therapy",
     category: "devices",
     tier: "Essentials",
@@ -663,6 +673,7 @@ export const products: Product[] = [
   {
     id: "pemf",
     name: "PEMF (Pulsed Electromagnetic Field) Therapy",
+    shortName: "PEMF Therapy",
     slug: "pemf",
     category: "devices",
     tier: "Advanced",
@@ -703,6 +714,7 @@ export const products: Product[] = [
   {
     id: "microcurrent",
     name: "Microcurrent Facial Devices",
+    shortName: "Microcurrent",
     slug: "microcurrent",
     category: "devices",
     tier: "Advanced",
