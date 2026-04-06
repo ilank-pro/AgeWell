@@ -20,8 +20,8 @@ export default function Home() {
 
       {/* How it works */}
       <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
-        <h2 className="text-center text-3xl font-black tracking-tight text-white sm:text-4xl">
-          The Optimization <span className="text-emerald-400">Protocol</span>
+        <h2 className="text-center text-3xl font-black tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
+          The Optimization <span className="text-emerald-600 dark:text-emerald-400">Protocol</span>
         </h2>
         <div className="mt-16 grid gap-12 sm:grid-cols-3">
           {[
