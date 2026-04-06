@@ -31,7 +31,7 @@ export default function AdvancedPage() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         {supplements.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">Supplements</h2>
+            <h2 className="text-2xl font-bold text-zinc-100">Supplements</h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {supplements.map((p) => <ProductCard key={p.id} product={p} />)}
             </div>
@@ -40,7 +40,7 @@ export default function AdvancedPage() {
 
         {food.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">Functional Foods</h2>
+            <h2 className="text-2xl font-bold text-zinc-100">Functional Foods</h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {food.map((p) => <ProductCard key={p.id} product={p} />)}
             </div>
@@ -49,7 +49,7 @@ export default function AdvancedPage() {
 
         {devices.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">Devices</h2>
+            <h2 className="text-2xl font-bold text-zinc-100">Devices</h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {devices.map((p) => <ProductCard key={p.id} product={p} />)}
             </div>

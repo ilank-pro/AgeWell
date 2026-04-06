@@ -29,7 +29,7 @@ export default function DevicesPage() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         {nonBioelectric.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">Light & Temperature</h2>
+            <h2 className="text-2xl font-bold text-zinc-100">Light & Temperature</h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {nonBioelectric.map((p) => <ProductCard key={p.id} product={p} />)}
             </div>
@@ -38,8 +38,8 @@ export default function DevicesPage() {
 
         {bioelectric.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">Bioelectric</h2>
-            <p className="mt-2 text-zinc-500 dark:text-zinc-400">
+            <h2 className="text-2xl font-bold text-zinc-100">Bioelectric</h2>
+            <p className="mt-2 text-zinc-400">
               Devices that interact with the body&apos;s electrical systems. This is frontier territory —
               the science of bioelectricity (Michael Levin, Tufts) is real, but consumer devices are
               a significant step removed from lab research.
@@ -52,11 +52,11 @@ export default function DevicesPage() {
 
         {/* Bioelectric editorial note */}
         <section className="mt-4">
-          <div className="rounded-lg border-l-4 border-amber-400 bg-amber-50 p-5 dark:border-amber-500 dark:bg-amber-950/20">
-            <h3 className="text-lg font-semibold text-amber-800 dark:text-amber-300">
+          <div className="rounded-lg border-l-4 border-amber-500 bg-amber-950/20 p-5">
+            <h3 className="text-lg font-semibold text-amber-300">
               On Bioelectric Devices & &quot;Cell Voltage&quot;
             </h3>
-            <div className="mt-3 space-y-3 text-sm leading-relaxed text-amber-900/80 dark:text-amber-200/80">
+            <div className="mt-3 space-y-3 text-sm leading-relaxed text-amber-200/80">
               <p>
                 The science of bioelectricity is legitimate and fascinating. Michael Levin&apos;s lab at Tufts
                 has shown that voltage gradients guide tissue patterning and regeneration. Mitochondrial
