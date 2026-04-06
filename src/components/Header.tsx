@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -17,14 +18,19 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+    <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+          <Image
+            src="/images/agewell_logo_var_luxury_1775435303123_1775472294691.png"
+            alt="AgeWell"
+            width={40}
+            height={40}
+            className="rounded-lg"
+            priority
+          />
+          <span className="text-lg font-bold tracking-tight text-zinc-100">
             AgeWell
-          </span>
-          <span className="hidden rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 sm:inline-block">
-            Science-First
           </span>
         </Link>
 
@@ -34,7 +40,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-100"
             >
               {item.label}
             </Link>
@@ -43,7 +49,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="rounded-lg p-2 text-zinc-600 hover:bg-zinc-100 md:hidden dark:text-zinc-400 dark:hover:bg-zinc-800"
+          className="rounded-lg p-2 text-zinc-400 hover:bg-zinc-800 md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -59,12 +65,12 @@ export default function Header() {
 
       {/* Mobile nav */}
       {menuOpen && (
-        <nav className="border-t border-zinc-200 bg-white px-4 py-2 md:hidden dark:border-zinc-800 dark:bg-zinc-950">
+        <nav className="border-t border-zinc-800 bg-zinc-950 px-4 py-2 md:hidden">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="block rounded-lg px-3 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
+              className="block rounded-lg px-3 py-2 text-sm font-medium text-zinc-400 hover:bg-zinc-800"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
