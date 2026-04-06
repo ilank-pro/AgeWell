@@ -1,23 +1,35 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Dna, Activity, ArrowDownCircle, RefreshCw, BarChart3 } from "lucide-react";
+import { useRef } from "react";
 
 export default function BiologicalClockDashboard() {
   const bioAge = 34.5;
   const actualAge = 42;
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [0.6, 0]);
 
   return (
-    <section className="bg-zinc-950 text-white overflow-hidden py-16 sm:py-24 relative min-h-screen flex items-center">
-      {/* High-Fidelity Background Layer */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-60">
+    <section ref={containerRef} className="bg-zinc-950 text-white overflow-hidden py-16 sm:py-24 relative min-h-screen flex items-center">
+      {/* High-Fidelity Background Layer with Parallax */}
+      <motion.div 
+        style={{ y, opacity }}
+        className="absolute inset-0 z-0 overflow-hidden pointer-events-none"
+      >
         <img 
           src="/images/biological-clock.png" 
           alt="Biological Clock High Fidelity Mockup" 
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover scale-[1.05]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-zinc-950 opacity-80" />
-      </div>
+      </motion.div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
         <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">

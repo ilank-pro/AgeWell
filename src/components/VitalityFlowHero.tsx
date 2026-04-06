@@ -1,22 +1,35 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Activity, Zap, ShieldCheck } from "lucide-react";
 import Link from "next/link";
+import { useRef } from "react";
 
 export default function VitalityFlowHero() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [0.8, 0]);
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-zinc-950 text-white">
-      {/* High-Fidelity Background Layer */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-zinc-950 text-white">
+      {/* High-Fidelity Background Layer with Parallax */}
+      <motion.div 
+        style={{ y, opacity }}
+        className="absolute inset-0 z-0 overflow-hidden pointer-events-none"
+      >
         <img 
           src="/images/vitality-flow.png" 
           alt="Vitality Flow High Fidelity Mockup" 
-          className="h-full w-full object-cover scale-[1.02] opacity-80"
+          className="h-full w-full object-cover scale-[1.1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950 opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-transparent to-zinc-950 opacity-20" />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950 opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-transparent to-zinc-950 opacity-40" />
+      </motion.div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:flex lg:items-center lg:gap-x-12">
         <div className="max-w-2xl lg:flex-auto">

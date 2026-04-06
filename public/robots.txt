@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://agewell.com
+
+# Sitemaps
+Sitemap: https://agewell.com/sitemap.xml

@@ -1,21 +1,34 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Beaker, Microscope, TestTube, Dna, FileText, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { useRef } from "react";
 
 export default function LongevityLabHero() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [0.6, 0]);
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-white text-zinc-900 dark:bg-zinc-950 dark:text-white">
-      {/* High-Fidelity Background Layer */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-40 dark:opacity-60">
+    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-white text-zinc-900 dark:bg-zinc-950 dark:text-white">
+      {/* High-Fidelity Background Layer with Parallax */}
+      <motion.div 
+        style={{ y, opacity }}
+        className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-40 dark:opacity-60"
+      >
         <img 
           src="/images/longevity-lab.png" 
           alt="Longevity Lab High Fidelity Mockup" 
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover scale-[1.05]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white dark:from-zinc-950 dark:to-zinc-950 opacity-40" />
-      </div>
+      </motion.div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16">
         <div>
