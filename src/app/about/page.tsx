@@ -16,8 +16,8 @@ export default function AboutPage() {
           <Image
             src="/images/agewell_logo_var_luxury_1775435303123_1775472294691.png"
             alt="AgeWell"
-            width={160}
-            height={160}
+            width={240}
+            height={240}
             className="rounded-2xl"
             priority
           />
