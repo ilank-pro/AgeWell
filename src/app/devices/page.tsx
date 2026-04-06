@@ -29,7 +29,7 @@ export default function DevicesPage() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         {nonBioelectric.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-zinc-100">Light & Temperature</h2>
+            <h2 className="text-2xl font-bold text-white">Light & Temperature</h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {nonBioelectric.map((p) => <ProductCard key={p.id} product={p} />)}
             </div>
@@ -38,7 +38,7 @@ export default function DevicesPage() {
 
         {bioelectric.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-zinc-100">Bioelectric</h2>
+            <h2 className="text-2xl font-bold text-white">Bioelectric</h2>
             <p className="mt-2 text-zinc-400">
               Devices that interact with the body&apos;s electrical systems. This is frontier territory —
               the science of bioelectricity (Michael Levin, Tufts) is real, but consumer devices are
