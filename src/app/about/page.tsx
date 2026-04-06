@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,10 +8,33 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-      <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
-        About & Methodology
-      </h1>
+    <div>
+      {/* Hero with logo */}
+      <section className="relative overflow-hidden bg-zinc-950 py-20 sm:py-28">
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-950/10 via-transparent to-transparent" />
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-4 text-center sm:px-6">
+          <Image
+            src="/images/agewell_logo_var_luxury_1775435303123_1775472294691.png"
+            alt="AgeWell"
+            width={160}
+            height={160}
+            className="rounded-2xl"
+            priority
+          />
+          <h1 className="mt-8 text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+            About & Methodology
+          </h1>
+          <p className="mt-3 text-sm font-semibold tracking-widest uppercase text-amber-400/80">
+            Empowering AgeLife
+          </p>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-zinc-400">
+            Science-first anti-aging. Every product we recommend is backed by peer-reviewed
+            human research — no hype, no miracle claims, just evidence you can trust.
+          </p>
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
 
       <div className="mt-8 space-y-10">
         <section>
@@ -110,6 +134,7 @@ export default function AboutPage() {
             </p>
           </div>
         </section>
+      </div>
       </div>
     </div>
   );
