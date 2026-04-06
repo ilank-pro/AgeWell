@@ -45,8 +45,8 @@ export default function Home() {
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500/10 text-xl font-black text-emerald-400 border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-all glass">
                 {item.step}
               </div>
-              <h3 className="mt-6 text-xl font-bold text-white uppercase tracking-tight">{item.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-zinc-400 max-w-xs mx-auto">{item.desc}</p>
+              <h3 className="mt-6 text-xl font-bold text-zinc-900 dark:text-white uppercase tracking-tight">{item.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 max-w-xs mx-auto">{item.desc}</p>
             </div>
           ))}
         </div>
